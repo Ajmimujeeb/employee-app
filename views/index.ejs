@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h2>Employee List</h2>
+<ul>
+  <% emp.forEach(item => { %>
+    <li>
+      <%= item.empName %> <%= item.empDesgn %> <%= item.empLocation %> <%= item.empSalary %>
+      <a href="/edit/<%= item._id %>">Edit</a>
+      <form action="/delete/<%= item._id %>" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('partials/footer') %>
